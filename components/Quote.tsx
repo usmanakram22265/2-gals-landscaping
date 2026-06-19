@@ -128,7 +128,7 @@ export default function Quote() {
             className="animate-plantFloat pointer-events-none absolute z-[5] object-contain object-bottom"
             style={{
               left: 0,
-              marginLeft: -330, // half of width → centers plant over the panel's left edge, foliage spills off-screen left
+              marginLeft: -170, // shifted right of the panel's left edge, leaning toward but left of center
               bottom: -15,
               height: 660,
               width: 660,
