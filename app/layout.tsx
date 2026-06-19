@@ -37,7 +37,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${bricolage.variable}`}>
-      <body>{children}</body>
+      <body>
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

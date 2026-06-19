@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 
 const fieldCls =
-  "rounded-[10px] border border-line bg-white px-[14px] py-[13px] text-[14px] text-ink outline-none transition-colors focus:border-teal aria-[invalid=true]:border-[#b4452f]";
+  "rounded-[10px] border border-line bg-white px-[14px] py-[13px] text-[14px] text-ink outline-none transition-colors focus:border-teal aria-[invalid=true]:border-danger";
 const labelCls = "mb-[6px] block text-[12.5px] font-semibold text-slate-soft";
 
 const socials = [
@@ -113,7 +113,7 @@ export default function Quote() {
       <div className="mx-auto grid w-full max-w-quote grid-cols-[0.85fr_1fr] items-center gap-10">
         {/* Plant / social panel */}
         <div
-          className="relative flex min-h-[460px] flex-col justify-end rounded-[28px] p-11 shadow-float"
+          className="relative flex min-h-[460px] flex-col justify-end rounded-[18px] p-11 shadow-float"
           style={{
             background:
               "linear-gradient(90deg, #d2ebc2 0%, #a9c393 45%, #7e9b6b 100%)",
@@ -124,7 +124,6 @@ export default function Quote() {
             alt=""
             width={640}
             height={640}
-            priority
             className="animate-plantFloat pointer-events-none absolute z-[5] object-contain object-bottom"
             style={{
               left: 0,
@@ -151,7 +150,7 @@ export default function Quote() {
         </div>
 
         {/* Form / success panel */}
-        <div className="rounded-[28px] bg-cream px-[50px] py-12 shadow-float">
+        <div className="rounded-[18px] bg-cream px-[50px] py-12 shadow-float">
           {submitted ? (
             <div className="flex min-h-[420px] flex-col items-center justify-center text-center">
               <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-mist">
@@ -194,24 +193,24 @@ export default function Quote() {
                   <div>
                     <label htmlFor="q-name" className={labelCls}>Full name</label>
                     <input id="q-name" name="name" required autoComplete="name" aria-invalid={!!errors.name} aria-describedby={errId("name")} className={`${fieldCls} w-full`} />
-                    {errors.name && <p id="name-error" className="mt-1 text-[12px] text-[#b4452f]">{errors.name}</p>}
+                    {errors.name && <p id="name-error" className="mt-1 text-[12px] text-danger">{errors.name}</p>}
                   </div>
                   <div>
                     <label htmlFor="q-phone" className={labelCls}>Phone</label>
                     <input id="q-phone" name="phone" type="tel" required autoComplete="tel" aria-invalid={!!errors.phone} aria-describedby={errId("phone")} className={`${fieldCls} w-full`} />
-                    {errors.phone && <p id="phone-error" className="mt-1 text-[12px] text-[#b4452f]">{errors.phone}</p>}
+                    {errors.phone && <p id="phone-error" className="mt-1 text-[12px] text-danger">{errors.phone}</p>}
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-[14px]">
                   <div>
                     <label htmlFor="q-email" className={labelCls}>Email</label>
                     <input id="q-email" name="email" type="email" required autoComplete="email" aria-invalid={!!errors.email} aria-describedby={errId("email")} className={`${fieldCls} w-full`} />
-                    {errors.email && <p id="email-error" className="mt-1 text-[12px] text-[#b4452f]">{errors.email}</p>}
+                    {errors.email && <p id="email-error" className="mt-1 text-[12px] text-danger">{errors.email}</p>}
                   </div>
                   <div>
                     <label htmlFor="q-address" className={labelCls}>Project address</label>
                     <input id="q-address" name="address" required autoComplete="street-address" aria-invalid={!!errors.address} aria-describedby={errId("address")} className={`${fieldCls} w-full`} />
-                    {errors.address && <p id="address-error" className="mt-1 text-[12px] text-[#b4452f]">{errors.address}</p>}
+                    {errors.address && <p id="address-error" className="mt-1 text-[12px] text-danger">{errors.address}</p>}
                   </div>
                 </div>
                 <div>
@@ -231,12 +230,12 @@ export default function Quote() {
                     <option>Construction</option>
                     <option>Both / Not sure</option>
                   </select>
-                  {errors.service && <p id="service-error" className="mt-1 text-[12px] text-[#b4452f]">{errors.service}</p>}
+                  {errors.service && <p id="service-error" className="mt-1 text-[12px] text-danger">{errors.service}</p>}
                 </div>
                 <div>
                   <label htmlFor="q-message" className={labelCls}>About your project</label>
                   <textarea id="q-message" name="message" required rows={3} aria-invalid={!!errors.message} aria-describedby={errId("message")} className={`${fieldCls} w-full resize-y`} />
-                  {errors.message && <p id="message-error" className="mt-1 text-[12px] text-[#b4452f]">{errors.message}</p>}
+                  {errors.message && <p id="message-error" className="mt-1 text-[12px] text-danger">{errors.message}</p>}
                 </div>
                 <button
                   type="submit"

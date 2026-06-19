@@ -12,8 +12,9 @@ const config: Config = {
         ink: "#1c2b2b",
         mist: "#E4E6E3",
         moss: "#5a8f7a",
-        slate: { soft: "#4a5b58", muted: "#6a7976", faint: "#9aa8a4" },
+        slate: { soft: "#4a5b58", muted: "#5e6d69", faint: "#9aa8a4" },
         line: "#d4dcd9",
+        danger: "#b4452f",
       },
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],

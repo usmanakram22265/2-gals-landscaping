@@ -91,7 +91,7 @@ export default function Services() {
           {CARDS.map((c) => (
             <div
               key={c.id}
-              className="overflow-hidden rounded-[22px] border border-sage/20 bg-white/5 transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-card"
+              className="overflow-hidden rounded-[16px] border border-sage/20 bg-white/5 transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-card"
             >
               <div className="relative">
                 <Slot

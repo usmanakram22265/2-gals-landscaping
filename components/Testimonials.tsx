@@ -21,7 +21,7 @@ const REVIEWS: Review[] = [
 
 function Card({ r }: { r: Review }) {
   return (
-    <div className="w-[360px] flex-none rounded-[18px] border border-sage/20 bg-white/[0.06] p-[30px]">
+    <div className="w-[360px] flex-none rounded-[16px] border border-sage/20 bg-white/[0.06] p-[30px]">
       <div className="mb-4 text-[16px] tracking-[3px] text-sage">★★★★★</div>
       <p className="mb-6 min-h-[100px] text-[14.5px] leading-[1.7] text-white/90">
         {r.text}

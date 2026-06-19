@@ -24,17 +24,31 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    const ids = NAV.map((n) => n.href);
+    // Track each section's visible ratio and light the most-visible link;
+    // clear the highlight when none of them are on screen.
+    const ratios = new Map<string, number>();
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) setActive("#" + e.target.id);
+          ratios.set(
+            "#" + e.target.id,
+            e.isIntersecting ? e.intersectionRatio : 0,
+          );
         });
+        let best = "";
+        let max = 0;
+        ratios.forEach((r, id) => {
+          if (r > max) {
+            max = r;
+            best = id;
+          }
+        });
+        setActive(max > 0 ? best : "");
       },
-      { threshold: 0.4 },
+      { threshold: [0.25, 0.5, 0.75] },
     );
-    ids.forEach((id) => {
-      const el = document.querySelector(id);
+    NAV.forEach((n) => {
+      const el = document.querySelector(n.href);
       if (el) obs.observe(el);
     });
     return () => obs.disconnect();
@@ -60,7 +74,7 @@ export default function Header() {
       >
         <Link
           href="#top"
-          className="flex items-center gap-[11px] justify-self-start transition-colors duration-300"
+          className="flex items-center gap-[11px] justify-self-start rounded-[8px] transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
           style={{ color: scrolled ? "#0F4E4E" : "#FCFCFC" }}
         >
           <span className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-sage font-display text-[15px] font-extrabold tracking-[-0.5px] text-teal">
@@ -82,7 +96,7 @@ export default function Header() {
               <Link
                 key={n.href}
                 href={n.href}
-                className="group relative pb-1 font-display text-[14px] font-medium transition-colors duration-300"
+                className="group relative rounded-[4px] pb-1 font-display text-[14px] font-medium transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
                 style={{ color: navColor }}
               >
                 {n.label}
@@ -99,7 +113,7 @@ export default function Header() {
         <Link
           href="#quote"
           id="site-cta"
-          className="justify-self-end rounded-full border px-[22px] py-[11px] font-display text-[14px] font-semibold backdrop-blur-[8px] transition-[background,color,border-color] duration-200"
+          className="justify-self-end rounded-full border px-[22px] py-[11px] font-display text-[14px] font-semibold backdrop-blur-[8px] transition-[background,color,border-color] duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
           style={{
             background: scrolled ? "#0F4E4E" : "rgba(255,255,255,0.14)",
             borderColor: scrolled ? "#0F4E4E" : "rgba(255,255,255,0.4)",

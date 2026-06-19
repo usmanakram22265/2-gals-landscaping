@@ -96,7 +96,7 @@ export default function Portfolio() {
               type="button"
               onClick={() => setOpen(i)}
               aria-label={`View larger: ${it.alt}`}
-              className={`group relative overflow-hidden rounded-[18px] transition-[transform,box-shadow] duration-500 hover:shadow-[0_26px_50px_rgba(15,45,30,0.22)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal ${it.span}`}
+              className={`group relative overflow-hidden rounded-[16px] transition-[transform,box-shadow] duration-500 hover:shadow-[0_26px_50px_rgba(15,45,30,0.22)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal ${it.span}`}
             >
               <Parallax speed={0.05} className="absolute inset-x-0 -inset-y-[16%]">
                 <Image
@@ -159,7 +159,7 @@ export default function Portfolio() {
               alt={active.alt}
               width={1080}
               height={720}
-              className="max-h-[82vh] w-full rounded-[18px] object-contain"
+              className="max-h-[82vh] w-full rounded-[16px] object-contain"
             />
             <figcaption className="mt-3 text-center text-[13.5px] text-white/80">
               {active.alt}

@@ -19,7 +19,7 @@ export default function Team() {
         <div className="mx-auto grid max-w-[900px] grid-cols-3 gap-[34px]">
           {TEAM.map((m) => (
             <div key={m.id} className="text-center">
-              <div className="relative mb-5 h-[320px] w-full overflow-hidden rounded-[20px] bg-mist">
+              <div className="relative mb-5 h-[320px] w-full overflow-hidden rounded-[16px] bg-mist">
                 <Parallax speed={0.06} className="absolute inset-x-0 -inset-y-[12%]">
                   <Image
                     src={`/img/${m.id}.webp`}
