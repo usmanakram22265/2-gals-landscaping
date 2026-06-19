@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-montserrat), sans-serif;
+    color: #1c2b2b;
+    background: #fcfcfc;
+    -webkit-font-smoothing: antialiased;
+  }
+  input,
+  textarea,
+  select,
+  button {
+    font-family: inherit;
+  }
+  ::placeholder {
+    /* Darkened from #9aa8a4 to clear WCAG AA (4.5:1) on white inputs. */
+    color: #5a6b67;
+    opacity: 1;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display), sans-serif;
+  }
+}
+
+@layer components {
+  /* One fluid rhythm for every major section; breathes on larger viewports. */
+  .section-y {
+    padding-top: clamp(5rem, 9vw, 7.5rem);
+    padding-bottom: clamp(5rem, 9vw, 7.5rem);
+  }
+}
+
+@layer utilities {
+  /* Marquee edge fade for the testimonials track. */
+  .marquee-mask {
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent 0,
+      #000 7%,
+      #000 93%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      90deg,
+      transparent 0,
+      #000 7%,
+      #000 93%,
+      transparent 100%
+    );
+  }
+
+  /* Lightbox entrance: backdrop fades, the figure scales up from 96%. */
+  .lb-backdrop {
+    animation: lbBackdrop 0.22s ease both;
+  }
+  .lb-figure {
+    animation: lbFigure 0.34s var(--ease-out-quint) both;
+  }
+  @keyframes lbBackdrop {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes lbFigure {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Scroll-reveal: content focuses in (settle + de-blur) as it enters view. */
+  .reveal {
+    opacity: 0;
+    filter: blur(5px);
+    transition:
+      opacity 0.7s var(--ease-out-quint),
+      transform 0.75s var(--ease-out-quint),
+      filter 0.7s var(--ease-out-quint);
+    will-change: opacity, transform, filter;
+  }
+  .reveal-up {
+    transform: translateY(26px);
+  }
+  .reveal-left {
+    transform: translateX(-34px);
+  }
+  .reveal-right {
+    transform: translateX(34px);
+  }
+  .reveal-zoom {
+    transform: scale(0.94);
+  }
+  .reveal.is-in {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+
+  /* Process timeline: connector draws from the left, steps rise in sequence. */
+  .tl-line {
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.85s var(--ease-out-quint);
+  }
+  .tl-step {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.6s var(--ease-out-quint),
+      transform 0.6s var(--ease-out-quint);
+  }
+  .tl-in .tl-line,
+  .tl-in .tl-step {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+  .tl-line,
+  .tl-step {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .animate-marquee,
+  .animate-plantFloat,
+  .animate-floatUp {
+    animation: none !important;
+  }
+  /* Lightbox still appears, just without the scale/fade motion. */
+  .lb-backdrop,
+  .lb-figure {
+    animation-duration: 0.01ms !important;
+  }
+  /* With the marquee stopped, let users reach the rest of the reviews by scroll. */
+  .marquee-mask {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}

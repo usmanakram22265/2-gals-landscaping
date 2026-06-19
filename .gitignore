@@ -1,0 +1,7 @@
+node_modules/
+.next/
+2-gals-landscaping-landing-page-before-i-design-this-i-need/
+temporary screenshots/*
+!temporary screenshots/.gitkeep
+.DS_Store
+.env.local
