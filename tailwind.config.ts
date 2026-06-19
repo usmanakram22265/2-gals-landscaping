@@ -31,7 +31,7 @@ const config: Config = {
         },
         plantFloat: {
           "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-2px)" },
+          "50%": { transform: "translateY(-16px)" },
         },
         marquee: {
           from: { transform: "translateX(0)" },
@@ -40,7 +40,7 @@ const config: Config = {
       },
       animation: {
         floatUp: "floatUp .8s ease both",
-        plantFloat: "plantFloat 9s ease-in-out infinite",
+        plantFloat: "plantFloat 6s ease-in-out infinite",
         marquee: "marquee 60s linear infinite",
       },
       boxShadow: {
