@@ -127,8 +127,8 @@ export default function Quote() {
             priority
             className="animate-plantFloat pointer-events-none absolute z-[5] object-contain object-bottom"
             style={{
-              left: "50%",
-              marginLeft: -40, // half of width → centers the pot within the card
+              left: 0,
+              marginLeft: -330, // half of width → centers plant over the panel's left edge, foliage spills off-screen left
               bottom: -15,
               height: 660,
               width: 660,
