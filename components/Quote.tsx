@@ -141,7 +141,7 @@ export default function Quote() {
                 key={s.label}
                 href={s.href}
                 aria-label={s.label}
-                className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal text-cream shadow-[0_6px_16px_rgba(15,45,30,0.35)] transition-colors hover:bg-teal-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
+                className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal text-cream shadow-[0_6px_16px_rgba(15,45,30,0.35)] transition-[background-color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-teal-dark active:scale-[0.92] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
               >
                 {s.icon}
               </a>
@@ -173,7 +173,7 @@ export default function Quote() {
                   setHasService(false);
                   setSubmitted(false);
                 }}
-                className="rounded-[10px] border border-teal px-5 py-3 font-display text-[14px] font-semibold text-teal transition-colors hover:bg-teal hover:text-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal"
+                className="rounded-[10px] border border-teal px-5 py-3 font-display text-[14px] font-semibold text-teal transition-[background-color,color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-teal hover:text-cream active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal"
               >
                 Send another request
               </button>

@@ -113,7 +113,7 @@ export default function Header() {
         <Link
           href="#quote"
           id="site-cta"
-          className="justify-self-end rounded-full border px-[22px] py-[11px] font-display text-[14px] font-semibold backdrop-blur-[8px] transition-[background,color,border-color] duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
+          className="justify-self-end rounded-full border px-[22px] py-[11px] font-display text-[14px] font-semibold backdrop-blur-[8px] transition-[background,color,border-color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
           style={{
             background: scrolled ? "#0F4E4E" : "rgba(255,255,255,0.14)",
             borderColor: scrolled ? "#0F4E4E" : "rgba(255,255,255,0.4)",

@@ -2,6 +2,9 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+  // Gate every `hover:` utility behind (hover: hover) so touch taps don't
+  // trigger sticky hover states.
+  future: { hoverOnlyWhenSupported: true },
   theme: {
     extend: {
       colors: {

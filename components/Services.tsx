@@ -91,7 +91,7 @@ export default function Services() {
           {CARDS.map((c) => (
             <div
               key={c.id}
-              className="overflow-hidden rounded-[16px] border border-sage/20 bg-white/5 transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-card"
+              className="overflow-hidden rounded-[16px] border border-sage/20 bg-white/5 transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:shadow-card"
             >
               <div className="relative">
                 <Slot
@@ -127,7 +127,7 @@ export default function Services() {
                 </div>
                 <Link
                   href="#quote"
-                  className="mt-[26px] inline-flex items-center gap-2 rounded-full bg-sage px-5 py-[11px] font-display text-[13.5px] font-bold text-teal transition-colors duration-200 hover:bg-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
+                  className="mt-[26px] inline-flex items-center gap-2 rounded-full bg-sage px-5 py-[11px] font-display text-[13.5px] font-bold text-teal transition-[background-color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-cream active:translate-y-0 active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
                 >
                   Get a quote →
                 </Link>
