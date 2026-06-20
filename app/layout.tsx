@@ -41,6 +41,12 @@ export default function RootLayout({
         <a href="#main" className="skip-link">
           Skip to content
         </a>
+        {/* JS-off users (and crawlers) skip the loading cover and get the page. */}
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: "<style>.preloader{display:none!important}</style>",
+          }}
+        />
         {children}
       </body>
     </html>
