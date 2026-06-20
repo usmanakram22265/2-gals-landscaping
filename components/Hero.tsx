@@ -84,13 +84,12 @@ export default function Hero() {
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
         aria-hidden="true"
         tabIndex={-1}
-        poster="/assets/hero-poster.jpg"
         className="absolute inset-0 h-full w-full bg-teal object-cover [will-change:transform]"
       >
-        <source src="/assets/hero-new.mp4" type="video/mp4" />
+        <source src="/assets/hero.mp4" type="video/mp4" />
       </video>
 
       <div
