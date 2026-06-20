@@ -37,7 +37,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${bricolage.variable}`}>
-      <body>
+      {/* Extensions (ColorZilla, etc.) inject attributes onto <body> before
+          hydration; suppress the resulting one-level attribute mismatch. */}
+      <body suppressHydrationWarning>
         <a href="#main" className="skip-link">
           Skip to content
         </a>
