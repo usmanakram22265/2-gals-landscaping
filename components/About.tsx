@@ -44,7 +44,7 @@ export default function About() {
       <div className="mx-auto grid max-w-content grid-cols-2 items-center gap-20">
         <div className="relative">
           <div className="relative h-[520px] w-full overflow-hidden rounded-[18px] bg-mist">
-            <Parallax speed={0.08} className="absolute inset-x-0 -inset-y-[11%]">
+            <Parallax speed={0.13} className="absolute inset-x-0 -inset-y-[20%]">
               <Image
                 src="/uploads/030.jpg"
                 alt="The 2 Gals team at work on a landscape"

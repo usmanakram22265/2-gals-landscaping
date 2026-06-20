@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Parallax from "./Parallax";
 
 const TEAM = [
   { id: "team-1", name: "Paula Rodriguez", role: "Founder & Lead Designer" },
@@ -20,15 +19,13 @@ export default function Team() {
           {TEAM.map((m) => (
             <div key={m.id} className="text-center">
               <div className="relative mb-5 h-[320px] w-full overflow-hidden rounded-[16px] bg-mist">
-                <Parallax speed={0.06} className="absolute inset-x-0 -inset-y-[12%]">
-                  <Image
-                    src={`/img/${m.id}.webp`}
-                    alt={m.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 290px"
-                    className="object-cover"
-                  />
-                </Parallax>
+                <Image
+                  src={`/img/${m.id}.webp`}
+                  alt={m.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 290px"
+                  className="object-cover"
+                />
               </div>
               <h3 className="text-[19px] font-bold text-teal">{m.name}</h3>
               <p className="mt-1 text-[14px] text-slate-muted">{m.role}</p>

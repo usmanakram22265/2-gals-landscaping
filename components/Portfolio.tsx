@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import Parallax from "./Parallax";
 
 type Item = { id: string; src: string; span: string; alt: string };
 
@@ -98,15 +97,13 @@ export default function Portfolio() {
               aria-label={`View larger: ${it.alt}`}
               className={`group relative overflow-hidden rounded-[16px] transition-[transform,box-shadow] duration-500 hover:shadow-[0_26px_50px_rgba(15,45,30,0.22)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal ${it.span}`}
             >
-              <Parallax speed={0.05} className="absolute inset-x-0 -inset-y-[16%]">
-                <Image
-                  src={it.src}
-                  alt={it.alt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-[600ms] ease-[cubic-bezier(.22,.61,.36,1)] group-hover:scale-110"
-                />
-              </Parallax>
+              <Image
+                src={it.src}
+                alt={it.alt}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover transition-transform duration-[600ms] ease-[cubic-bezier(.22,.61,.36,1)] group-hover:scale-110"
+              />
               <div
                 className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-[450ms] ease-[cubic-bezier(.22,.61,.36,1)] group-hover:opacity-100"
                 style={{

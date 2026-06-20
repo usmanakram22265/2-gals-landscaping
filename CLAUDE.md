@@ -4,8 +4,10 @@
 
 ## Local Server
 - **Always serve on localhost** — never screenshot a `file:///` URL.
-- Start the dev server: `node serve.mjs` (serves the project root at `http://localhost:3000`)
-- `serve.mjs` lives in the project root. Start it in the background before taking any screenshots.
+- This is a **Next.js app** — start the dev server: `npm run dev` (serves at `http://localhost:3000`).
+- For a production check: `npm run build && npm run start`.
+- Do NOT use `node serve.mjs` — it is a static file server that only serves an `index.html`, which a Next.js app does not have, so it will 404.
+- Start the dev server in the background before taking any screenshots.
 - If the server is already running, do not start a second instance.
 
 ## Screenshot Workflow

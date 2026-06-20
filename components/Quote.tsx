@@ -124,7 +124,6 @@ export default function Quote() {
             alt=""
             width={640}
             height={640}
-            sizes="(max-width: 768px) 65vw, 540px"
             className="animate-plantFloat pointer-events-none absolute z-[5] object-contain object-bottom"
             style={{
               left: 0,

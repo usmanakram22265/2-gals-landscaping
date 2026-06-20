@@ -3,10 +3,11 @@
 import { useEffect, useRef, type ReactNode } from "react";
 
 /**
- * Subtle scroll parallax for image layers. All instances share ONE scroll
- * listener and one rAF tick, so adding many is cheap. The wrapped layer should
- * be sized larger than its (overflow-hidden) frame so the translate never
- * reveals an edge. No-ops under prefers-reduced-motion.
+ * Subtle scroll parallax for a large image layer. Instances share ONE scroll
+ * listener and one rAF tick. The wrapped layer must be sized larger than its
+ * (overflow-hidden) frame so the translate never reveals an edge. No-ops under
+ * prefers-reduced-motion. Reserved for large images where the drift actually
+ * reads; not worth it on small tiles.
  */
 type Item = { el: HTMLElement; speed: number };
 
