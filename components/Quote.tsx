@@ -4,8 +4,8 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 
 const fieldCls =
-  "rounded-[10px] border border-line bg-white px-[14px] py-[13px] text-[14px] text-ink outline-none transition-colors focus:border-teal aria-[invalid=true]:border-danger";
-const labelCls = "mb-[6px] block text-[12.5px] font-semibold text-slate-soft";
+  "rounded-[10px] border border-line bg-white px-[14px] py-[13px] text-[15px] text-ink outline-none transition-colors focus:border-teal aria-[invalid=true]:border-danger";
+const labelCls = "mb-[6px] block text-[13.5px] font-semibold text-slate-soft";
 
 const socials = [
   {
@@ -161,7 +161,7 @@ export default function Quote() {
               <h3 className="mb-[10px] text-[24px] font-bold text-teal">
                 Thank you!
               </h3>
-              <p className="mb-7 max-w-[320px] text-[15px] leading-[1.6] text-slate-soft">
+              <p className="mb-7 max-w-[320px] text-[16px] leading-[1.6] text-slate-soft">
                 We&rsquo;ve received your request. One of the gals will reach out
                 within one business day to schedule your free estimate.
               </p>
@@ -173,7 +173,7 @@ export default function Quote() {
                   setHasService(false);
                   setSubmitted(false);
                 }}
-                className="rounded-[10px] border border-teal px-5 py-3 font-display text-[14px] font-semibold text-teal transition-[background-color,color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-teal hover:text-cream active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal"
+                className="rounded-[10px] border border-teal px-5 py-3 font-display text-[15px] font-semibold text-teal transition-[background-color,color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-teal hover:text-cream active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal"
               >
                 Send another request
               </button>
@@ -183,7 +183,7 @@ export default function Quote() {
               <h3 className="mb-[6px] text-[26px] font-bold text-teal">
                 Let&rsquo;s talk about your landscape.
               </h3>
-              <p className="mb-[18px] text-[14px] leading-[1.5] text-slate-soft">
+              <p className="mb-[18px] text-[15px] leading-[1.5] text-slate-soft">
                 Free estimates across West Houston, Energy Corridor, Memorial,
                 Spring Branch and Katy. Tell us about your project and
                 we&rsquo;ll be in touch.
@@ -193,24 +193,24 @@ export default function Quote() {
                   <div>
                     <label htmlFor="q-name" className={labelCls}>Full name</label>
                     <input id="q-name" name="name" required autoComplete="name" aria-invalid={!!errors.name} aria-describedby={errId("name")} className={`${fieldCls} w-full`} />
-                    {errors.name && <p id="name-error" className="mt-1 text-[12px] text-danger">{errors.name}</p>}
+                    {errors.name && <p id="name-error" className="mt-1 text-[13px] text-danger">{errors.name}</p>}
                   </div>
                   <div>
                     <label htmlFor="q-phone" className={labelCls}>Phone</label>
                     <input id="q-phone" name="phone" type="tel" required autoComplete="tel" aria-invalid={!!errors.phone} aria-describedby={errId("phone")} className={`${fieldCls} w-full`} />
-                    {errors.phone && <p id="phone-error" className="mt-1 text-[12px] text-danger">{errors.phone}</p>}
+                    {errors.phone && <p id="phone-error" className="mt-1 text-[13px] text-danger">{errors.phone}</p>}
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-[14px]">
                   <div>
                     <label htmlFor="q-email" className={labelCls}>Email</label>
                     <input id="q-email" name="email" type="email" required autoComplete="email" aria-invalid={!!errors.email} aria-describedby={errId("email")} className={`${fieldCls} w-full`} />
-                    {errors.email && <p id="email-error" className="mt-1 text-[12px] text-danger">{errors.email}</p>}
+                    {errors.email && <p id="email-error" className="mt-1 text-[13px] text-danger">{errors.email}</p>}
                   </div>
                   <div>
                     <label htmlFor="q-address" className={labelCls}>Project address</label>
                     <input id="q-address" name="address" required autoComplete="street-address" aria-invalid={!!errors.address} aria-describedby={errId("address")} className={`${fieldCls} w-full`} />
-                    {errors.address && <p id="address-error" className="mt-1 text-[12px] text-danger">{errors.address}</p>}
+                    {errors.address && <p id="address-error" className="mt-1 text-[13px] text-danger">{errors.address}</p>}
                   </div>
                 </div>
                 <div>
@@ -230,18 +230,18 @@ export default function Quote() {
                     <option>Construction</option>
                     <option>Both / Not sure</option>
                   </select>
-                  {errors.service && <p id="service-error" className="mt-1 text-[12px] text-danger">{errors.service}</p>}
+                  {errors.service && <p id="service-error" className="mt-1 text-[13px] text-danger">{errors.service}</p>}
                 </div>
                 <div>
                   <label htmlFor="q-message" className={labelCls}>About your project</label>
                   <textarea id="q-message" name="message" required rows={3} aria-invalid={!!errors.message} aria-describedby={errId("message")} className={`${fieldCls} w-full resize-y`} />
-                  {errors.message && <p id="message-error" className="mt-1 text-[12px] text-danger">{errors.message}</p>}
+                  {errors.message && <p id="message-error" className="mt-1 text-[13px] text-danger">{errors.message}</p>}
                 </div>
                 <button
                   type="submit"
                   disabled={pending}
                   aria-busy={pending}
-                  className="mt-1 flex items-center justify-center gap-2 rounded-[10px] bg-teal p-[14px] font-display text-[15px] font-bold text-cream transition-[background,transform,box-shadow] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-teal-bright hover:shadow-[0_12px_26px_rgba(15,70,70,0.32)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal active:translate-y-0 active:scale-[0.99] active:shadow-[0_4px_12px_rgba(15,70,70,0.3)] disabled:cursor-default disabled:hover:translate-y-0 disabled:hover:bg-teal disabled:hover:shadow-none"
+                  className="mt-1 flex items-center justify-center gap-2 rounded-[10px] bg-teal p-[14px] font-display text-[16px] font-bold text-cream transition-[background,transform,box-shadow] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-teal-bright hover:shadow-[0_12px_26px_rgba(15,70,70,0.32)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal active:translate-y-0 active:scale-[0.99] active:shadow-[0_4px_12px_rgba(15,70,70,0.3)] disabled:cursor-default disabled:hover:translate-y-0 disabled:hover:bg-teal disabled:hover:shadow-none"
                 >
                   {pending ? (
                     <>

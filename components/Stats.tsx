@@ -82,7 +82,7 @@ export default function Stats() {
             >
               {s.value}
             </div>
-            <div className="mt-1 text-[13px] font-medium tracking-[0.5px] text-white/80">
+            <div className="mt-1 text-[14px] font-medium tracking-[0.5px] text-white/80">
               {s.label}
             </div>
           </div>

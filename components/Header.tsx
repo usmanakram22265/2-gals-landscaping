@@ -65,8 +65,21 @@ export default function Header() {
         boxShadow: scrolled ? "0 6px 24px rgba(15,45,30,0.14)" : "none",
       }}
     >
+      {/* Hero scrim: in the transparent (top) state the nav sits over the
+          video, so a soft top-down gradient keeps the white links legible no
+          matter what the footage is doing. Fades out as the cream header
+          background takes over on scroll. */}
       <div
-        className="mx-auto grid max-w-shell grid-cols-[1fr_auto_1fr] items-center px-10 transition-[padding] duration-300"
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-[170px] transition-opacity duration-300"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(5,22,20,0.5) 0%, rgba(5,22,20,0.24) 45%, rgba(5,22,20,0) 100%)",
+          opacity: scrolled ? 0 : 1,
+        }}
+      />
+      <div
+        className="relative z-[1] mx-auto grid max-w-shell grid-cols-[1fr_auto_1fr] items-center px-10 transition-[padding] duration-300"
         style={{
           paddingTop: scrolled ? 16 : 28,
           paddingBottom: scrolled ? 16 : 28,
@@ -74,8 +87,11 @@ export default function Header() {
       >
         <Link
           href="#top"
-          className="flex items-center gap-[11px] justify-self-start rounded-[8px] transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
-          style={{ color: scrolled ? "#0F4E4E" : "#FCFCFC" }}
+          className="flex items-center gap-[11px] justify-self-start rounded-[8px] transition-[color,text-shadow] duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
+          style={{
+            color: scrolled ? "#0F4E4E" : "#FCFCFC",
+            textShadow: scrolled ? "none" : "0 1px 12px rgba(4,18,16,0.7)",
+          }}
         >
           <span className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-sage font-display text-[15px] font-extrabold tracking-[-0.5px] text-teal">
             2G
@@ -96,8 +112,13 @@ export default function Header() {
               <Link
                 key={n.href}
                 href={n.href}
-                className="group relative rounded-[4px] pb-1 font-display text-[14px] font-medium transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
-                style={{ color: navColor }}
+                className="group relative rounded-[4px] pb-1 font-display text-[14px] font-medium transition-[color,text-shadow] duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
+                style={{
+                  color: navColor,
+                  textShadow: scrolled
+                    ? "none"
+                    : "0 1px 12px rgba(4,18,16,0.75)",
+                }}
               >
                 {n.label}
                 <span
@@ -115,8 +136,8 @@ export default function Header() {
           id="site-cta"
           className="justify-self-end rounded-full border px-[22px] py-[11px] font-display text-[14px] font-semibold backdrop-blur-[8px] transition-[background,color,border-color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
           style={{
-            background: scrolled ? "#0F4E4E" : "rgba(255,255,255,0.14)",
-            borderColor: scrolled ? "#0F4E4E" : "rgba(255,255,255,0.4)",
+            background: scrolled ? "#0F4E4E" : "rgba(255,255,255,0.18)",
+            borderColor: scrolled ? "#0F4E4E" : "rgba(255,255,255,0.55)",
             color: "#FCFCFC",
           }}
         >

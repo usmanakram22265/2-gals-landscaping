@@ -83,7 +83,7 @@ export default function Portfolio() {
           <h2 className="text-[clamp(2rem,4vw,2.875rem)] font-bold leading-[1.1] tracking-[-0.02em] text-teal">
             A look at recent projects
           </h2>
-          <p className="mt-4 text-[15px] leading-[1.7] text-slate-soft">
+          <p className="mt-4 text-[16px] leading-[1.7] text-slate-soft">
             Built across West Houston and finished to last. Select any project to
             see it up close.
           </p>
@@ -95,14 +95,14 @@ export default function Portfolio() {
               type="button"
               onClick={() => setOpen(i)}
               aria-label={`View larger: ${it.alt}`}
-              className={`group relative overflow-hidden rounded-[16px] transition-[transform,box-shadow] duration-500 hover:shadow-[0_26px_50px_rgba(15,45,30,0.22)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal ${it.span}`}
+              className={`group relative overflow-hidden rounded-[16px] transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:shadow-[0_26px_50px_rgba(15,45,30,0.22)] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal ${it.span}`}
             >
               <Image
                 src={it.src}
                 alt={it.alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover transition-transform duration-[600ms] ease-[cubic-bezier(.22,.61,.36,1)] group-hover:scale-110"
+                className="object-cover transition-transform duration-[450ms] ease-[cubic-bezier(.22,.61,.36,1)] group-hover:scale-110"
               />
               <div
                 className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-[450ms] ease-[cubic-bezier(.22,.61,.36,1)] group-hover:opacity-100"
@@ -111,7 +111,7 @@ export default function Portfolio() {
                     "linear-gradient(180deg,rgba(15,78,78,0) 40%,rgba(15,78,78,0.55) 100%)",
                 }}
               />
-              <span className="pointer-events-none absolute bottom-[18px] left-5 translate-y-3 font-display text-[15px] font-bold tracking-[0.2px] text-cream opacity-0 transition-[opacity,transform] duration-[450ms] ease-[cubic-bezier(.22,.61,.36,1)] group-hover:translate-y-0 group-hover:opacity-100">
+              <span className="pointer-events-none absolute bottom-[18px] left-5 translate-y-3 font-display text-[16px] font-bold tracking-[0.2px] text-cream opacity-0 transition-[opacity,transform] duration-[450ms] ease-[cubic-bezier(.22,.61,.36,1)] group-hover:translate-y-0 group-hover:opacity-100">
                 View project →
               </span>
             </button>
@@ -158,7 +158,7 @@ export default function Portfolio() {
               height={720}
               className="max-h-[82vh] w-full rounded-[16px] object-contain"
             />
-            <figcaption className="mt-3 text-center text-[13.5px] text-white/80">
+            <figcaption className="mt-3 text-center text-[14px] text-white/80">
               {active.alt}
             </figcaption>
           </figure>

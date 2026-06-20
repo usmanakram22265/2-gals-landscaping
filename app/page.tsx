@@ -3,7 +3,6 @@ import BackToTop from "@/components/BackToTop";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import ParallaxBand from "@/components/ParallaxBand";
 import Portfolio from "@/components/Portfolio";
 import Preloader from "@/components/Preloader";
 import Process from "@/components/Process";
@@ -25,7 +24,6 @@ export default function Home() {
         <About />
         <Services />
         <Portfolio />
-        <ParallaxBand />
         <Process />
         <Testimonials />
         <Team />

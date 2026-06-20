@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Parallax from "./Parallax";
 import Slot from "./Slot";
 
 type Card = {
@@ -67,7 +68,7 @@ const CARDS: Card[] = [
 
 function Item({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex items-center gap-3 text-[13px] text-white/[0.88]">
+    <div className="flex items-center gap-3 text-[14px] text-white/[0.88]">
       <span className="text-sage">✦</span> {children}
     </div>
   );
@@ -81,7 +82,7 @@ export default function Services() {
           <h2 className="max-w-[16ch] text-[clamp(2rem,4vw,2.875rem)] font-bold leading-[1.1] tracking-[-0.02em] text-cream">
             Everything your landscape needs, in one team
           </h2>
-          <p className="max-w-[34ch] text-[15px] leading-[1.7] text-white/[0.78]">
+          <p className="max-w-[34ch] text-[16px] leading-[1.7] text-white/[0.78]">
             Design, build, and maintenance handled end to end, so the people who
             planned your space are the ones who care for it.
           </p>
@@ -89,10 +90,13 @@ export default function Services() {
 
         <div className="grid grid-cols-4 gap-[18px]">
           {CARDS.map((c) => (
-            <div
-              key={c.id}
-              className="overflow-hidden rounded-[16px] border border-sage/20 bg-white/5 transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:shadow-card"
-            >
+            // Gentle scroll parallax: every card drifts together at the same
+            // modest rate. The grid cell keeps its scroll-reveal entrance;
+            // Parallax sits on a nested element so the two transforms compose
+            // instead of fighting. No-ops under prefers-reduced-motion.
+            <div key={c.id} className="h-full">
+              <Parallax speed={0.1} className="h-full">
+                <div className="h-full overflow-hidden rounded-[16px] border border-sage/20 bg-white/5 transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:shadow-card">
               <div className="relative">
                 <Slot
                   src={c.img}
@@ -114,7 +118,7 @@ export default function Services() {
               </div>
               <div className="px-[22px] pb-[26px] pt-[22px]">
                 {c.desc && (
-                  <p className="m-0 text-[15px] leading-[1.7] text-white/[0.88]">
+                  <p className="m-0 text-[16px] leading-[1.7] text-white/[0.88]">
                     {c.desc}
                   </p>
                 )}
@@ -127,11 +131,13 @@ export default function Services() {
                 </div>
                 <Link
                   href="#quote"
-                  className="mt-[26px] inline-flex items-center gap-2 rounded-full bg-sage px-5 py-[11px] font-display text-[13.5px] font-bold text-teal transition-[background-color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-cream active:translate-y-0 active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
+                  className="mt-[26px] inline-flex items-center gap-2 rounded-full bg-sage px-5 py-[11px] font-display text-[14px] font-bold text-teal transition-[background-color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-cream active:translate-y-0 active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
                 >
                   Get a quote →
                 </Link>
               </div>
+                </div>
+              </Parallax>
             </div>
           ))}
         </div>

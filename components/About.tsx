@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Parallax from "./Parallax";
 
 const ICON =
   "h-[22px] w-[22px] [&_*]:[stroke:#0F4E4E] [&_*]:[stroke-width:1.8]";
@@ -43,24 +44,36 @@ export default function About() {
       <div className="mx-auto grid max-w-content grid-cols-2 items-center gap-20">
         <div className="relative">
           <div className="relative h-[520px] w-full overflow-hidden rounded-[18px] bg-mist">
-            <Image
-              src="/uploads/030.jpg"
-              alt="The 2 Gals team at work on a landscape"
-              fill
-              sizes="(max-width: 768px) 100vw, 590px"
-              className="object-cover"
-            />
+            {/* Gentle parallax on the large feature photo — the textbook use
+                (a big image where the drift actually reads). It sits behind the
+                fixed quote card, which stays put. Buffer extends past the frame
+                so the drift never reveals an edge; no-ops under reduced-motion. */}
+            <Parallax speed={0.14} className="absolute inset-x-0 -inset-y-[35%]">
+              <Image
+                src="/uploads/030.jpg"
+                alt="A manicured backyard lawn bordered by a brick wall and freshly planted garden beds"
+                fill
+                sizes="(max-width: 768px) 100vw, 590px"
+                className="object-cover"
+              />
+            </Parallax>
           </div>
           <div
             className="absolute inset-x-[26px] bottom-[26px] flex items-start gap-[14px] rounded-2xl p-[20px_22px] text-cream backdrop-blur-[6px]"
             style={{ background: "rgba(15,78,78,0.92)" }}
           >
-            <span className="h-[46px] w-[46px] flex-none rounded-full bg-sage" />
+            <Image
+              src="/img/team-1.webp"
+              alt="Paula Rodriguez"
+              width={46}
+              height={46}
+              className="h-[46px] w-[46px] flex-none rounded-full object-cover"
+            />
             <div>
-              <div className="mb-[3px] text-[14px] font-bold">
+              <div className="mb-[3px] text-[15px] font-bold">
                 Paula Rodriguez
               </div>
-              <div className="text-[12.5px] leading-[1.5] text-white/85">
+              <div className="text-[13.5px] leading-[1.5] text-white/85">
                 &ldquo;Every yard tells a story. We make sure yours grows
                 beautifully for years to come.&rdquo;
               </div>
@@ -87,7 +100,7 @@ export default function About() {
                   <h3 className="mb-[5px] text-[17px] font-bold text-ink">
                     {f.title}
                   </h3>
-                  <p className="text-[14px] leading-[1.6] text-slate-muted">
+                  <p className="text-[15px] leading-[1.6] text-slate-muted">
                     {f.body}
                   </p>
                 </div>

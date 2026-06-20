@@ -19,7 +19,7 @@ function update() {
   raf = 0;
   const vh = window.innerHeight;
   for (const { el, speed } of items) {
-    const r = el.getBoundingClientRect();
+    const r = (el.parentElement ?? el).getBoundingClientRect();
     const fromCenter = r.top + r.height / 2 - vh / 2;
     el.style.transform = `translate3d(0, ${(-fromCenter * speed).toFixed(1)}px, 0)`;
   }

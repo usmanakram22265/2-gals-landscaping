@@ -104,7 +104,7 @@ export default function Hero() {
         ref={innerRef}
         className="relative z-[2] max-w-[820px] animate-floatUp px-6 pt-[172px] text-center text-cream [will-change:transform,opacity]"
       >
-        <span className="mb-5 inline-block font-display text-[12px] font-semibold uppercase tracking-[3px] text-sage">
+        <span className="mb-5 inline-block font-display text-[13px] font-semibold uppercase tracking-[3px] text-sage">
           Houston Landscaping &amp; Construction
         </span>
         <h1
@@ -116,7 +116,7 @@ export default function Hero() {
           your landscape
         </h1>
         <p
-          className="mx-auto mb-[34px] max-w-[440px] text-[15px] font-normal leading-[1.7] text-white/90"
+          className="mx-auto mb-[34px] max-w-[440px] text-[16px] font-normal leading-[1.7] text-white/90"
           style={{ textShadow: "0 1px 12px rgba(8,30,30,0.6)" }}
         >
           We design, build, and care for outdoor spaces across West Houston,
@@ -124,7 +124,7 @@ export default function Hero() {
         </p>
         <Link
           href="#quote"
-          className="inline-flex items-center gap-[10px] rounded-full border border-cream bg-cream px-[34px] py-4 font-display text-[15px] font-bold text-teal shadow-cta transition-[background,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-[#eef3ec] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal active:translate-y-0 active:scale-[0.98]"
+          className="inline-flex items-center gap-[10px] rounded-full border border-cream bg-cream px-[34px] py-4 font-display text-[16px] font-bold text-teal shadow-cta transition-[background,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-[#eef3ec] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal active:translate-y-0 active:scale-[0.98]"
         >
           Get a Quote <span className="text-[16px]">→</span>
         </Link>

@@ -23,19 +23,19 @@ function Card({ r }: { r: Review }) {
   return (
     <div className="w-[360px] flex-none rounded-[16px] border border-sage/20 bg-white/[0.06] p-[30px]">
       <div className="mb-4 text-[16px] tracking-[3px] text-sage">★★★★★</div>
-      <p className="mb-6 min-h-[100px] text-[14.5px] leading-[1.7] text-white/90">
+      <p className="mb-6 min-h-[100px] text-[15px] leading-[1.7] text-white/90">
         {r.text}
       </p>
       <div className="flex items-center gap-3">
         <span
-          className="flex h-[42px] w-[42px] flex-none items-center justify-center rounded-full font-display text-[14px] font-extrabold text-teal"
+          className="flex h-[42px] w-[42px] flex-none items-center justify-center rounded-full font-display text-[15px] font-extrabold text-teal"
           style={{ background: r.color }}
         >
           {r.initials}
         </span>
         <div>
-          <div className="text-[14px] font-bold text-cream">{r.name}</div>
-          <div className="text-[12px] text-white/75">{r.place}</div>
+          <div className="text-[15px] font-bold text-cream">{r.name}</div>
+          <div className="text-[13px] text-white/75">{r.place}</div>
         </div>
       </div>
     </div>
