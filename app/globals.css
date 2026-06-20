@@ -221,6 +221,50 @@
     transform: none;
     opacity: 1;
   }
+
+  /* Quote success: the badge settles in, the check draws itself, then the
+     message rises. A quiet, earned payoff for the one action the page asks
+     for. Plays once on mount; reduced-motion shows the final state at once.
+     `success-rise` uses backwards fill (not forwards) so the button's hover
+     and press transforms aren't locked after the entrance. */
+  .success-badge {
+    animation: successPop 0.5s var(--ease-out-quint) both;
+  }
+  .success-check {
+    stroke-dasharray: 24;
+    animation: checkDraw 0.55s var(--ease-out-quint) 0.22s both;
+  }
+  .success-rise {
+    animation: successRise 0.55s var(--ease-out-quint) backwards;
+  }
+  @keyframes successPop {
+    from {
+      opacity: 0;
+      transform: scale(0.82);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes checkDraw {
+    from {
+      stroke-dashoffset: 24;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes successRise {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -261,5 +305,10 @@
     overflow-x: auto;
     -webkit-mask-image: none;
     mask-image: none;
+  }
+  .success-badge,
+  .success-check,
+  .success-rise {
+    animation: none !important;
   }
 }

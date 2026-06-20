@@ -131,9 +131,12 @@ export default function Services() {
                 </div>
                 <Link
                   href="#quote"
-                  className="mt-[26px] inline-flex items-center gap-2 rounded-full bg-sage px-5 py-[11px] font-display text-[14px] font-bold text-teal transition-[background-color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-cream active:translate-y-0 active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
+                  className="group mt-[26px] inline-flex items-center gap-2 rounded-full bg-sage px-5 py-[11px] font-display text-[14px] font-bold text-teal transition-[background-color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-cream active:translate-y-0 active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage"
                 >
-                  Get a quote →
+                  Get a Quote
+                  <span className="transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1">
+                    →
+                  </span>
                 </Link>
               </div>
                 </div>

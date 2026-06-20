@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 
 const fieldCls =
-  "rounded-[10px] border border-line bg-white px-[14px] py-[13px] text-[15px] text-ink outline-none transition-colors focus:border-teal aria-[invalid=true]:border-danger";
+  "rounded-[10px] border border-line bg-white px-[14px] py-[13px] text-[15px] text-ink outline-none transition-[border-color,box-shadow] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] focus:border-teal focus:shadow-[0_0_0_3px_rgba(15,78,78,0.12)] aria-[invalid=true]:border-danger";
 const labelCls = "mb-[6px] block text-[13.5px] font-semibold text-slate-soft";
 
 const socials = [
@@ -153,15 +153,21 @@ export default function Quote() {
         <div className="rounded-[18px] bg-cream px-[50px] py-12 shadow-float">
           {submitted ? (
             <div className="flex min-h-[420px] flex-col items-center justify-center text-center">
-              <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-mist">
+              <div className="success-badge mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-mist">
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0F4E4E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12l5 5L20 7" />
+                  <path className="success-check" d="M5 12l5 5L20 7" />
                 </svg>
               </div>
-              <h3 className="mb-[10px] text-[24px] font-bold text-teal">
+              <h3
+                className="success-rise mb-[10px] text-[24px] font-bold text-teal"
+                style={{ animationDelay: "0.15s" }}
+              >
                 Thank you!
               </h3>
-              <p className="mb-7 max-w-[320px] text-[16px] leading-[1.6] text-slate-soft">
+              <p
+                className="success-rise mb-7 max-w-[320px] text-[16px] leading-[1.6] text-slate-soft"
+                style={{ animationDelay: "0.26s" }}
+              >
                 We&rsquo;ve received your request. One of the gals will reach out
                 within one business day to schedule your free estimate.
               </p>
@@ -173,7 +179,8 @@ export default function Quote() {
                   setHasService(false);
                   setSubmitted(false);
                 }}
-                className="rounded-[10px] border border-teal px-5 py-3 font-display text-[15px] font-semibold text-teal transition-[background-color,color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-teal hover:text-cream active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal"
+                style={{ animationDelay: "0.4s" }}
+                className="success-rise rounded-[10px] border border-teal px-5 py-3 font-display text-[15px] font-semibold text-teal transition-[background-color,color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-teal hover:text-cream active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal"
               >
                 Send another request
               </button>

@@ -124,9 +124,12 @@ export default function Hero() {
         </p>
         <Link
           href="#quote"
-          className="inline-flex items-center gap-[10px] rounded-full border border-cream bg-cream px-[34px] py-4 font-display text-[16px] font-bold text-teal shadow-cta transition-[background,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-[#eef3ec] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal active:translate-y-0 active:scale-[0.98]"
+          className="group inline-flex items-center gap-[10px] rounded-full border border-cream bg-cream px-[34px] py-4 font-display text-[16px] font-bold text-teal shadow-cta transition-[background,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:bg-[#eef3ec] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal active:translate-y-0 active:scale-[0.98]"
         >
-          Get a Quote <span className="text-[16px]">→</span>
+          Get a Quote
+          <span className="text-[16px] transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1">
+            →
+          </span>
         </Link>
       </div>
     </section>
